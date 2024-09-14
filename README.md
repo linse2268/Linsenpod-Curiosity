@@ -14,6 +14,6 @@
 ### 4. Auto (Motor und Servos)
 ### 5. Ultraschallsensor zur Absicherung
 evtl. 3 statt nur 1 (2 bewegliche zur Hinderniserkennung und Anweisung an den Benutzer)
-![Bild](unnötige Bilder/ultraschallsensorEntwurf.png)
+![Bild](bilder/ultraschallsensorEntwurf.png)
 
 ### 6. Süßigkeitenpistole mit Zeitintervalen
