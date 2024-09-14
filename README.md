@@ -20,5 +20,3 @@ evtl. 3 statt nur 1 (2 bewegliche zur Hinderniserkennung und Anweisung an den Be
 Der Arudino erkennt, dass nur rechts Platz ist und weist den Benutzer darauf hin.
 
 ### 6. Süßigkeitenpistole mit Zeitintervalen
-
-<h1 padding="10" backgroundcolor="red" >Test</h1>
