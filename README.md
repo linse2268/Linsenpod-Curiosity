@@ -15,5 +15,7 @@
 ### 5. Ultraschallsensor zur Absicherung
 evtl. 3 statt nur 1 (2 bewegliche zur Hinderniserkennung und Anweisung an den Benutzer)
 ![Bild](bilder/ultraschallsensorEntwurf.png)
+<img src="biler/ultraschallsensorEntwurf.png" alt="Mein Projektlogo" width="200">
+
 
 ### 6. Süßigkeitenpistole mit Zeitintervalen
