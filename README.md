@@ -17,6 +17,6 @@ evtl. 3 statt nur 1 (2 bewegliche zur Hinderniserkennung und Anweisung an den Be
 
 <img src="bilder/ultraschallsensorEntwurf.png" alt="Mein Projektlogo" width="350">
 (die blauen dinger sind die ultraschallsensoren) 
-'Der Arudino erkennt, dass nur rechts Platz ist und weist den Benutzer darauf hin.'
+`Der Arudino erkennt, dass nur rechts Platz ist und weist den Benutzer darauf hin.`
 
 ### 6. Süßigkeitenpistole mit Zeitintervalen
