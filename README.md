@@ -21,4 +21,4 @@ Der Arudino erkennt, dass nur rechts Platz ist und weist den Benutzer darauf hin
 
 ### 6. Süßigkeitenpistole mit Zeitintervalen
 
-<div style="width: 20; height: 20; background-color: red; ><h1>test</h1></div>
+<h1>Test</h1>
