@@ -19,4 +19,5 @@ evtl. 3 statt nur 1 (2 bewegliche zur Hinderniserkennung und Anweisung an den Be
 (die blauen dinger sind die ultraschallsensoren) 
 Der Arudino erkennt, dass nur rechts Platz ist und weist den Benutzer darauf hin.
 (evtl. nur ein aber dafür schwenkbarer ultraschallsensor(nachteil: langsamer und damit nicht so sicher. Vorteil: weniger bauteile)
+
 ###  6. Süßigkeitenpistole mit Zeitintervalen
