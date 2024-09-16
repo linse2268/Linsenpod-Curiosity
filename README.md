@@ -9,6 +9,7 @@
 
 ## **Umsetzung**
 ### 1. Verbinung von ESP und Browser
+(Dürfen wir das Schulwlan überhaupt benutzen???)
 ### 2. Datentransfer mit Javascript und C++
 ### 3. Kamera
 ### 4. Auto (Motor und Servos)
