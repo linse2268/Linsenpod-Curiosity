@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheDinoGameTest</title>
+
+<!--STYLE-STYLE-STYLE-STYLE-STYLE-STYLE-STYLE-STYLE-STYLE-STYLE-STYLE-STYLE-STYLE-STYLE-STYLE--->
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    user-select: none;
+}
+
+body{ 
+    background-color: rgb(66, 66, 66);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    position: relative;
+    top: -60px;
+    font-size: 7em;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.24);
+    
+}
+
+.points{
+    display: flex;
+    justify-content: space-between;
+    width: 850px;
+}
+
+h5{
+    font-size: 2em;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.24);
+    
+}
+
+#game{
+    height: 300px;
+    width: 900px;
+    
+    border-radius: 10px;
+    box-shadow: inset 0 0 20px black;
+    background-color: rgb(71, 71, 71);
+    z-index: 3;
+    overflow: hidden;
+}
+
+#character{
+    width: 30px;
+    height: 80px;
+    background-color: rgb(93, 223, 104);
+    border-radius: 10px;
+    position: relative;
+    top: 217px;
+    left: 10px;
+    z-index: 2;
+}
+
+#block{
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: rgb(255, 166, 0);
+    position: relative;
+    top: 178px;
+    left: 900px;
+    z-index: 1;
+    display: none;
+    animation:block linear infinite;
+    animation-duration: 1.5s;
+}
+
+@keyframes block{
+    to{left: -90px;}
+}
+
+#restart{
+
+    width: 200px;
+    height: 80px;
+    border: none;
+    border-radius: 20px;
+    background-color:  rgb(71, 71, 71);
+    box-shadow: inset 0 0 15px black;
+    position: relative;
+    top: 50px;
+    color: rgba(255, 255, 255, 0.24);
+    font-size: 3em;
+    font-weight: 700;
+}
+
+
+@media (max-width:900px){
+
+    h1{
+        font-size: 2em;
+        top: -40px;
+    }
+
+    #restart{
+
+        width: 90px;
+        height: 40px;
+        top: 30px;
+        font-size: 1em;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.603);
+    }
+
+    .points{
+        width: 370px;
+    }
+    h5{
+        font-size: 1.1em;
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.24);
+    }
+    #game{
+        height: 150px;
+        width: 400px;
+        overflow: hidden;
+    }
+
+    #character{
+        width: 15px;
+        height: 40px;
+        border-radius: 5px;
+        position: relative;
+        top: 105px;
+        left: 8px;
+    }
+
+    @keyframes jump{
+        0%{top: 105px;}
+        30%{top: 75px;}
+        70%{top: 75px;}
+        100%{top: 105px;}
+    }
+
+    #block{
+        width: 20px;
+        height: 20px;
+        border-radius: 2px;
+        position: relative;
+        top: 90px;
+        left: 100px;
+    }
+
+    @keyframes block{
+        0%{left: 390px;}
+        100%{left: -10px;}
+    }
+}
+
+@media (max-width:500px){
+
+    h1{
+        font-size: 2em;
+        top: -30px;
+    }
+
+    #restart{
+
+        width: 90px;
+        height: 40px;
+        font-size: 1em;
+        top: 20px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.603);
+    }
+
+    .points{
+        width: 280px;
+    }
+
+    h5{
+        font-size: 0.8em;
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.24);
+    }
+    #game{
+        height: 150px;
+        width: 300px;
+        overflow: hidden;
+    }
+
+    #character{
+        width: 15px;
+        height: 40px;
+        border-radius: 5px;
+        position: relative;
+        top: 105px;
+        left: 8px;
+    }
+
+    @keyframes jump{
+        0%{top: 105px;}
+        30%{top: 75px;}
+        70%{top: 75px;}
+        100%{top: 105px;}
+    }
+
+    #block{
+        width: 20px;
+        height: 20px;
+        border-radius: 2px;
+        position: relative;
+        top: 90px;
+        left: 100px;
+    }
+
+    @keyframes block{
+        0%{left: 390px;}
+        100%{left: -10px;}
+    }
+}
+    </style>
+
+<!--STYLEEND-STYLEEND-STYLEEND-STYLEEND-STYLEEND-STYLEEND-STYLEEND-STYLEEND-STYLEEND-STYLEEND-STYLEEND-STYLEEND-STYLEEND--->
+</head>
+<body id="body">
+    <div id="content">
+
+        <h1 id="text">Let's Play!</h1>
+        <div class="points">
+            <h5 id="highscore">HScr 00000</h5>
+            <h5 id="score">Scr 00000</h5>
+            <h5 id="round">Rnd 00</h5>
+        </div>
+        <div id="game">
+
+            <div id="character"></div>
+            <div id="block"></div>
+            
+        </div>
+        <button id="restart" onclick="restart()">Start</button>
+
+    </div>
+<!--SCRIPT-SCRIPT-SCRIPT-SCRIPT-SCRIPT-SCRIPT-SCRIPT-SCRIPT-SCRIPT-SCRIPT-SCRIPT-SCRIPT-SCRIPT-SCRIPT-SCRIPT-SCRIPT-SCRIPT---> 
+    <script>
+var character = document.getElementById('character');       //player
+var block = document.getElementById('block');               //enemy
+var text = document.getElementById('text');
+var body = document.getElementById('body');
+var score = document.getElementById('score');               //score
+var highscoreText = document.getElementById('highscore');
+var roundText = document.getElementById('round');
+var roundValue = 0;
+var highscoreValue = 0;
+var viewportWidth = parseInt(window.innerWidth);            //measures the width of the users display
+var running = false;                                                     
+var jumpHeight = 162; // Default jump height                //jumpheight (later set by viewportWidth)
+var jumpDuration = 500;                                     
+var current
+var jumping = false;                        
+
+block.style.animation = "none";
+block.style.display = "none";
+
+
+// Adjust jump height based on viewport width
+setInterval(function(){
+    if (viewportWidth <= 900) {
+        jumpHeight = 30;          //small view!!!!!!!!!!!!!!!!!!!!
+        normalHeight = 105;
+    } else {
+        jumpHeight = 100;         //normal desktop view!!!!!!!!!!!!!!!!!!!!!!
+        normalHeight = 217;
+    }
+},10)
+
+
+body.addEventListener('click', jumpactive); 
+
+
+function jumpactive(){       // checks, if game is running && not already jumping 
+    if(running && !jumping ){
+        jump();
+    }
+}
+
+function jump() {
+        jumping = true;   //declares that character is jumping --> cannot jump again until jump is finished
+        const startTime = performance.now();
+
+        function animateJump(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            const progress = elapsedTime / jumpDuration;
+
+            if (progress < 1) {
+                const jumpProgress = Math.sin(progress * Math.PI); // Apply a sine function for a more natural jump curve
+                const heightOffset = normalHeight - (jumpProgress * jumpHeight);
+
+                character.style.top = heightOffset + 'px';
+
+                requestAnimationFrame(animateJump);
+            } else {
+                character.style.top = normalHeight + 'px'; // Reset position
+                jumping = false;  //declares that is not jumping --> player can jump again
+            }
+            
+        }
+        requestAnimationFrame(animateJump); 
+}
+
+var checkdead = setInterval(function() {
+    var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+
+    if (viewportWidth <= 900) {
+        if (blockLeft < 20 && blockLeft > 0 && characterTop >= 90) {
+            contact();
+        }
+    } else {
+        if (blockLeft < 40 && blockLeft > 0 && characterTop >= 175) {
+            contact();
+        }
+    }
+}, 10)
+
+function contact(){
+    block.style.animation = "none";
+    block.style.display = "none";
+    
+    newHighscore();
+    running = false;
+    character.style.top = normalHeight + 'px'; // Reset position
+    text.innerText = "You Lose";
+    setTimeout(function() {
+        text.innerText = "Let's Play!";
+    }, 3000)
+}
+
+function newHighscore(){
+    if(highscoreValue < time){
+        console.log("new highscore '" + time + "' in round " + roundValue);
+        highscoreText.innerText = "HScr " + time;
+        highscoreValue = time;
+    }
+}
+
+
+function restart() {            //used for Start and restart
+    runningFunction();
+    time = 0;
+    roundValue++;
+    if(roundValue < 10){
+        roundValue = "0" + roundValue;
+    }
+    roundText.innerText = "Rnd " + roundValue; 
+    score.innerText = "Scr 00000";
+    jumping = true;
+    running = true;
+    setTimeout(function(){
+        jumping = false;
+    },1)
+
+}
+
+function runningFunction() {
+    block.style.animation = "block linear infinite";
+    block.style.animationDuration = "1.5s"
+    block.style.display = "block";
+    
+}
+ 
+
+
+var time = 0;
+setInterval(function() {
+    if (running) {
+
+        time++;
+        if(time < 10){
+            time = "0000" + time;
+        }
+        else if(time < 100){
+            time = "000" + time;
+        }
+        else if(time < 1000){
+            time = "00" + time;
+        }
+        else if(time < 10000){
+            time = "0" + time;
+        }
+        score.innerText = "Scr " + time;
+    }
+}, 100)
+    </script>
+
+<!--SCRIPTEND-SCRIPTEND-SCRIPTEND-SCRIPTEND-SCRIPTEND-SCRIPTEND-SCRIPTEND-SCRIPTEND-SCRIPTEND-SCRIPTEND-SCRIPTEND-SCRIPTEND---> 
+
+</body>
+
+</html>
