@@ -1,0 +1,662 @@
+//flashcard project
+const char flashcardapp[] =
+R"=====(
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Flashcard App</title>
+      <!-- Font Awesome Icons -->
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      />
+      <!-- Google Fonts -->
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet"
+      />
+      <!-- Stylesheet -->
+      
+      <style>
+          * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    
+    body {
+      background-color: #f7f9fd;
+    }
+    
+    .container {
+      width: 90vw;
+      max-width: 62.5em;
+      position: relative;
+      margin: auto;
+    }
+    
+    .add-flashcard-con {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1.2em 1em;
+    }
+    
+    button {
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    
+    .add-flashcard-con button {
+      font-size: 1em;
+      background-color: #4caf50; /* Updated color */
+      color: #ffffff;
+      padding: 0.8em 1.2em;
+      font-weight: 500;
+      border-radius: 0.4em;
+    }
+    
+    #card-con {
+      margin-top: 1em;
+    }
+    
+    .question-container {
+      width: 90vw;
+      max-width: 34em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #ffffff;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      padding: 3em 2em;
+      border-radius: 0.6em;
+      box-shadow: 0 1em 2em rgba(28, 0, 80, 0.1);
+    }
+    
+    .question-container h2 {
+      font-size: 2.2em;
+      color: #363d55;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 2em;
+    }
+    
+    .wrapper {
+      display: grid;
+      grid-template-columns: 11fr 1fr;
+      gap: 1em;
+      margin-bottom: 1em;
+    }
+    
+    .error-con {
+      align-self: center;
+    }
+    
+    #error {
+      color: #ff5353;
+      font-weight: 400;
+    }
+    
+    .fa-xmark {
+      font-size: 1.4em;
+      background-color: #4caf50; /* Updated color */
+      height: 1.8em;
+      width: 1.8em;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      border-radius: 50%;
+      cursor: pointer;
+      justify-self: flex-end;
+    }
+    
+    label {
+      color: #363d55;
+      font-weight: 600;
+      margin-bottom: 0.3em;
+    }
+    
+    textarea {
+      width: 100%;
+      padding: 0.7em 0.5em;
+      border: 1px solid #d0d0d0;
+      outline: none;
+      color: #414a67;
+      border-radius: 0.3em;
+      resize: none;
+    }
+    
+    textarea:not(:last-child) {
+      margin-bottom: 1.2em;
+    }
+    
+    textarea:focus {
+      border-color: #363d55;
+    }
+    
+    #save-btn {
+      font-size: 1em;
+      background-color: #4caf50; /* Updated color */
+      color: #ffffff;
+      padding: 0.6em 0;
+      border-radius: 0.3em;
+      font-weight: 600;
+    }
+    
+    .card-list-container {
+      display: grid;
+      padding: 0.2em;
+      gap: 1.5em;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .card {
+      background-color: #ffffff;
+      box-shadow: 0 0.4em 1.2em rgba(28, 0, 80, 0.08);
+      padding: 1.2em;
+      border-radius: 0.4em;
+    }
+    
+    .question-div,
+    .answer-div {
+      text-align: justify;
+    }
+    
+    .question-div {
+      margin-bottom: 0.5em;
+      font-weight: 500;
+      color: #363d55;
+    }
+    
+    .answer-div {
+      margin-top: 1em;
+      font-weight: 400;
+      color: #414a67;
+    }
+    
+    .show-hide-btn {
+      display: block;
+      background-color: #4caf50; /* Updated color */
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center;
+      padding: 0.6em 0;
+      border-radius: 0.3em;
+    }
+    
+    .buttons-con {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .edit,
+    .delete {
+      background-color: transparent;
+      padding: 0.5em;
+      font-size: 1.2em;
+    }
+    
+    .edit {
+      color: #4caf50; /* Updated color */
+    }
+    
+    .delete {
+      color: #ff5353;
+    }
+    
+    .hide {
+      display: none;
+    }
+    
+    @media screen and (max-width: 800px) {
+      .card-list-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8em;
+      }
+    }
+    
+    @media screen and (max-width: 450px) {
+      body {
+        font-size: 14px;
+      }
+      .card-list-container {
+        grid-template-columns: 1fr;
+        gap: 1.2em;
+      }
+    }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="add-flashcard-con">
+          <button id="add-flashcard">Add Flashcard</button>
+        </div>
+
+        <!-- Display Card of Question And Answers Here -->
+        <div id="card-con">
+          <div class="card-list-container"></div>
+        </div>
+      </div>
+
+      <!-- Input form for users to fill question and answer -->
+      <div class="question-container hide" id="add-question-card">
+        <h2>Add Flashcard</h2>
+        <div class="wrapper">
+          <!-- Error message -->
+          <div class="error-con">
+            <span class="hide" id="error">Input fields cannot be empty!</span>
+          </div>
+          <!-- Close Button -->
+          <i class="fa-solid fa-xmark" id="close-btn"></i>
+        </div>
+
+        <label for="question">Question:</label>
+        <textarea
+          class="input"
+          id="question"
+          placeholder="Type the question here..."
+          rows="2"
+        ></textarea>
+        <label for="answer">Answer:</label>
+        <textarea
+          class="input"
+          id="answer"
+          rows="4"
+          placeholder="Type the answer here..."
+        ></textarea>
+        <button id="save-btn">Save</button>
+      </div>
+
+      <!-- Script -->
+      <script>
+                  // Selecting DOM elements
+          const container = document.querySelector(".container");
+          const addQuestionCard = document.getElementById("add-question-card");
+          const cardButton = document.getElementById("save-btn");
+          const question = document.getElementById("question");
+          const answer = document.getElementById("answer");
+          const errorMessage = document.getElementById("error");
+          const addQuestion = document.getElementById("add-flashcard");
+          const closeBtn = document.getElementById("close-btn");
+
+          // Initializing variables
+          let editBool = false;
+          let originalId = null;
+          let flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
+
+          addQuestion.addEventListener("click", () => {
+          // Show the add question card and hide the container
+          container.classList.add("hide");
+          question.value = "";
+          answer.value = "";
+          addQuestionCard.classList.remove("hide");
+          });
+
+          closeBtn.addEventListener("click", () => {
+          // Close the add question card and show the container
+          container.classList.remove("hide");
+          addQuestionCard.classList.add("hide");
+          if (editBool) {
+              editBool = false;
+          }
+          });
+
+          cardButton.addEventListener("click", () => {
+          // Save the flashcard
+          let tempQuestion = question.value.trim();
+          let tempAnswer = answer.value.trim();
+          if (!tempQuestion || !tempAnswer) {
+              // Display error message if question or answer is empty
+              errorMessage.classList.remove("hide");
+          } else {
+              if (editBool) {
+              // If editing an existing flashcard, remove the original flashcard from the array
+              flashcards = flashcards.filter(flashcard => flashcard.id !== originalId);
+              }
+              let id = Date.now();
+              // Add the new flashcard to the array
+              flashcards.push({ id, question: tempQuestion, answer: tempAnswer });
+              // Save the flashcards array to local storage
+              localStorage.setItem('flashcards', JSON.stringify(flashcards));
+              container.classList.remove("hide");
+              errorMessage.classList.add("hide");
+              viewlist();
+              question.value = "";
+              answer.value = "";
+              editBool = false;
+              addQuestionCard.classList.add("hide"); // This line hides the modal after the flashcard is added
+          }
+          });
+
+          // Function to display the flashcard list
+          function viewlist() {
+          const listCard = document.querySelector(".card-list-container");
+          listCard.innerHTML = '';
+          flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
+          flashcards.forEach(flashcard => {
+              const div = document.createElement("div");
+              div.classList.add("card");
+              div.innerHTML = `
+              <p class="question-div">${flashcard.question}</p>
+              <p class="answer-div hide">${flashcard.answer}</p>
+              <a href="#" class="show-hide-btn">Show/Hide</a>
+              <div class="buttons-con">
+                  <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                  <button class="delete"><i class="fa-solid fa-trash-can"></i></button>
+              </div>
+              `;
+              div.setAttribute('data-id', flashcard.id);
+              const displayAnswer = div.querySelector(".answer-div");
+              const showHideBtn = div.querySelector(".show-hide-btn");
+              const editButton = div.querySelector(".edit");
+              const deleteButton = div.querySelector(".delete");
+
+              showHideBtn.addEventListener("click", () => {
+              // Toggle the visibility of the answer
+              displayAnswer.classList.toggle("hide");
+              });
+
+              editButton.addEventListener("click", () => {
+              // Enable editing mode and show the add question card
+              editBool = true;
+              modifyElement(editButton, true);
+              addQuestionCard.classList.remove("hide");
+              });
+
+              deleteButton.addEventListener("click", () => {
+              // Delete the flashcard
+              modifyElement(deleteButton);
+              });
+
+              listCard.appendChild(div);
+          });
+          }
+
+          // Function to modify a flashcard element
+          const modifyElement = (element, edit = false) => {
+          const parentDiv = element.parentElement.parentElement;
+          const id = Number(parentDiv.getAttribute('data-id'));
+          const parentQuestion = parentDiv.querySelector(".question-div").innerText;
+          if (edit) {
+              const parentAns = parentDiv.querySelector(".answer-div").innerText;
+              answer.value = parentAns;
+              question.value = parentQuestion;
+              originalId = id;
+              disableButtons(true);
+          } else {
+              // Remove the flashcard from the array and update local storage
+              flashcards = flashcards.filter(flashcard => flashcard.id !== id);
+              localStorage.setItem('flashcards', JSON.stringify(flashcards));
+          }
+          parentDiv.remove();
+          };
+
+          // Function to disable edit buttons
+          const disableButtons = (value) => {
+          const editButtons = document.getElementsByClassName("edit");
+          Array.from(editButtons).forEach((element) => {
+              element.disabled = value;
+          });
+          };
+
+          // Event listener to display the flashcard list when the DOM is loaded
+          document.addEventListener("DOMContentLoaded", viewlist);
+      </script>
+    </body>
+  </html>
+
+)=====";
+
+//handle test output
+const char js_script[] =
+R"=====(
+  <html>
+    <body>
+      <h1>Test Output</h1>
+      <form>
+        <input type='checkbox' id='switch' name='switch'>
+        <label for='switch'>Switch</label>
+      </form>
+      <script>
+        const switchButton = document.getElementById('switch');
+        switchButton.addEventListener('change', () => {
+          if (switchButton.checked) {
+            sendSwitchState('on');
+          } else {
+            sendSwitchState('off');
+          }
+        });
+        
+        function sendSwitchState(state) {
+          const xhr = new XMLHttpRequest();
+          xhr.open('GET', '/api/testoutput/' + state, true);
+          xhr.send();
+        }
+      </script>
+    </body>
+  </html>
+)=====";
+
+//button tests
+const char button_js_script[] =
+R"=====(
+    <html>
+    <head>
+        <title>Steuerung mit WASD</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+        <style>
+          *{
+            font-family: "Fredoka", sans-serif;
+            color: rgb(185, 185, 185);
+            margin: 0;
+            padding: 0;
+            user-select: none;
+          }
+            body{
+                width: 98vw;
+                height: calc(100vh - 2vw);
+                padding: 1vw;
+
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                gap: 1vw;
+                background-color: rgb(29, 29, 29);
+            }
+            button{
+                background-color: rgb(53, 53, 53);
+                border-radius: 1vw;
+                border: none;
+                font-size: 2em;
+            }
+            div{
+                background-color: rgb(53, 53, 53);
+                border-radius: 1vw;
+                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2em;
+            }
+            img{
+                display: block; 
+                user-select: none; 
+                margin: auto; 
+                background-color: hsl(0, 0%, 19%); 
+                width: 100%; 
+                height: 100%;
+                grid-row: 1 / 6;
+                grid-column: 1 / 5;                
+                border-radius: 1vw;
+            }
+            #banner{
+              padding: 0;
+              margin: 0;
+              grid-column: 5 / 7;
+              display: flex;
+              
+            }
+            h5{
+              font-size: 1.5vw;
+              font-weight: 300;
+              color: rgb(150, 150, 150);
+              padding-right: 0.5vw;
+            }
+            h3{
+              font-size: 3vw;
+            }
+      
+        </style>
+    </head>
+      <body>
+        <!--ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-->
+        <img id="img" src="http://192.168.2.106:8080/video">
+        <button id="w" onclick="sendButtonState('w')">Button 1</button>
+        <button id="a" onclick="sendButtonState('a')">Button 2</button>
+        <button id="s" onclick="sendButtonState('s')">Button 3</button>
+        <button id="d" onclick="sendButtonState('d')">Button 4</button>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div id="testFürWASD">1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div id="banner"><h5>LinsenPod</h5> <h3><b>Curiosity</b></h3></div>
+        <!--ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-ELEMENTE-->
+        <script>
+            // Function to send a GET request to the ESP with the button state
+            // Function to send a GET request to the ESP with the button state
+            function sendButtonState(state) {
+              const xhr = new XMLHttpRequest();
+              xhr.open('GET', '/api/buttontest/' + state, true);
+              xhr.send();
+            }
+
+            // Funktion zum Aktualisieren der Bewegung
+            function updateMovement(event) {
+              if (event.type === 'keydown') {
+                // Send request to ESP when a key is pressed
+                sendButtonState(event.key);
+              } else if (event.type === 'keyup') {
+                // Send request to ESP when a key is released
+                sendButtonState(event.key + '_release');
+              }
+            }
+
+            const keysPressed = {
+              w: false,
+              a: false,
+              s: false,
+              d: false
+            };
+
+            document.addEventListener("keydown", function(event) {
+              switch(event.key) {
+                case 'w':
+                  if (!keysPressed.w) {
+                    keysPressed.w = true;
+                    updateMovement(event);
+                  }
+                  break;
+                case 'a':
+                  if (!keysPressed.a) {
+                    keysPressed.a = true;
+                    updateMovement(event);
+                  }
+                  break;
+                case 's':
+                  if (!keysPressed.s) {
+                    keysPressed.s = true;
+                    updateMovement(event);
+                  }
+                  break;
+                case 'd':
+                  if (!keysPressed.d) {
+                    keysPressed.d = true;
+                    updateMovement(event);
+                  }
+                  break;
+              }
+            });
+
+            document.addEventListener("keyup", function(event) {
+              switch(event.key) {
+                case 'w':
+                  keysPressed.w = false;
+                  updateMovement(event);
+                  break;
+                case 'a':
+                  keysPressed.a = false;
+                  updateMovement(event);
+                  break;
+                case 's':
+                  keysPressed.s = false;
+                  updateMovement(event);
+                  break;
+                case 'd':
+                  keysPressed.d = false;
+                  updateMovement(event);
+                  break;
+              }
+            });
+            </script>
+      </body>
+</html>
+)=====";
+
+//livestream
+const char video_stream[] =
+R"=====(
+  <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <body style="margin: 0px; height: 100%; background-color: rgb(14, 14, 14);">
+            <img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);" 
+            src="http://192.168.2.106:8080/video" width="736" height="414">
+        </body>
+    </body>
+    </html>
+)=====";
+
+//codes for variable update(splittet for inserting cpp variable)
+const char js_variable_code_part1[] =
+R"=====(
+  <html><head></head><body>
+    <span id='x'> Current value of x: 
+)=====";
+
+const char js_variable_code_part2[] =
+R"=====(
+  </span>
+    <script>setInterval(function(){
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/api/variable', true);
+      xhr.send();
+      xhr.onload = function(){
+        document.getElementById('x').innerHTML = xhr.responseText;
+      };
+    }, 1000);</script>
+  </body></html>
+)=====";
