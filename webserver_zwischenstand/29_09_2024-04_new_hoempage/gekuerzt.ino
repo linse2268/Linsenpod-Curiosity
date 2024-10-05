@@ -68,9 +68,6 @@ void setup() {
   server.on("/api/buttontest/d", handleApiRequest);
   server.on("/api/buttontest/d_release", handleApiRequest);
   
-  //livestream
-
-  //display updatet variable
   server.begin();
 }
 
@@ -138,8 +135,6 @@ void handleButtonTest() {
     server.send(200, "text/plain", "Button 4 release");
   }
 
-
-//lifestream test displayen
 
 
 void handleApiRequest() {
