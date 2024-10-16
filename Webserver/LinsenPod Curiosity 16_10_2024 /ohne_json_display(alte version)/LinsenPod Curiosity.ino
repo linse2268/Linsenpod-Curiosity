@@ -29,10 +29,6 @@ ESP8266WebServer server(80); // Create web server on port 80
 String currIndex = "";
 String response_data;
 
-//neu-neu-neu-neu
-int Trigger = 7;
-int Echo = 6;
-
 
 void setup() {
     Serial.begin(9600);
@@ -77,28 +73,12 @@ void setup() {
 
 
 
-    //neu-neu-neu-neu
-    pinMode(Trigger,OUTPUT);
-    pinMode(Echo,INPUT);
 }
 
 void loop() {
     server.handleClient(); // Handle incoming client requests
     MDNS.update(); // Update mDNS
 
-
-    //neu-neu-neu-neu
-    //Messen
-    Ultra();
-
-    int dauer = pulseIn(Echo, HIGH); //empfängt
-    int entfernung = 0.0343*(dauer/2); 
-
-    
-    //Printen zur Kontrolle
-    
-    Serial.print(entfernung);
-    delay(20);
 }
 
 // API endpoint handlers
@@ -187,26 +167,6 @@ void handleApiRequest() {
             handleButton4Release();
         }
     }
-}
-
-
-//neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu
-//neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu-neu
-void Ultra(){
-digitalWrite(Trigger, LOW); delay (5); 
-digitalWrite(Trigger, HIGH); delay (5); 
-digitalWrite(Trigger, LOW);
-}
-
-void handlevariable() {
-    
-
-    // Send JSON response
-    String jsonResponse = "{ \"wert\": ";
-    jsonResponse += String(entfernung);
-    jsonResponse += " }";
-  
-    server.send(200, "application/json", jsonResponse); // Sende die JSON-Antwort
 }
 
 
