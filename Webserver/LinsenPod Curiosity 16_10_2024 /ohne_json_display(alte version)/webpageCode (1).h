@@ -177,21 +177,7 @@ R"=====(
             });
             </script>
 
-            <script>
-                setInterval(function(){
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', '/lol', true);  // Anfrage an den /lol Endpunkt
-
-                xhr.onload = function(){
-                if (xhr.status == 200) {
-                var response = JSON.parse(xhr.responseText); // JSON verarbeiten
-                document.getElementById('entfernungText').innerText = response.wert; // HTML aktualisieren
-                }
-                };
-
-                xhr.send(); // Anfrage absenden
-                }, 20);  // Alle 1000ms wiederholen
-            </script>
+            
 
 </script>
       </body>
