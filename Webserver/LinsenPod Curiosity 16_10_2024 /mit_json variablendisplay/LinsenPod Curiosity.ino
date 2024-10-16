@@ -26,9 +26,6 @@ WiFiClient client;
 HTTPClient http;
 ESP8266WebServer server(80); // Create web server on port 80
 
-String currIndex = "";
-String response_data;
-
 //neu-neu-neu-neu
 int Trigger = 7;
 int Echo = 6;
