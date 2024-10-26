@@ -16,7 +16,7 @@ const char* password = "theahermine";
 const char* admin = "admin";
 const char* pwd = "passwort";
 
-const char* dns_name = "esp"; // DNS name for mDNS
+const char* dns_name = "lpc"; // DNS name for mDNS
 
 WiFiClient client;//configurating the wifi and http client
 HTTPClient http;
