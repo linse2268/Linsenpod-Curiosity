@@ -263,7 +263,7 @@ R"=====(
               <h3 id="curiosityBanner"><b>Curiosity</b></h3>
             </div>
             <button class="button" id="lilBigButton" onclick="hideMenu()">
-              X
+              OK
             </button>
           </div>
           <div class="menuContent">
