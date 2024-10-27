@@ -233,7 +233,7 @@ R"=====(
     <button class="button" id="d" onclick="sendButtonState('d')">
       Button 4
     </button>
-    <div id="counterDisplay">Speed: <span id="counter">4</span></div>
+    <div id="counterDisplay">Speed: <span id="counter">4</span>/7</div>
     <div id="testFürWASD">1</div>
     <div>1</div>
     <div>2</div>
