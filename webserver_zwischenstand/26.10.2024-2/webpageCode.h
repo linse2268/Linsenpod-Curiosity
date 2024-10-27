@@ -496,7 +496,6 @@ R"=====(
     </script>
   </body>
 </html>
-</html>
 )=====";
 
 //normal homepage
