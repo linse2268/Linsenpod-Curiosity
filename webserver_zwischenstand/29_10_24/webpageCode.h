@@ -681,7 +681,7 @@ const char* json_slider_page = R"rawliteral(
     
     <div class="slider-container">
         <label for="speedSlider">Wert:</label>
-        <input type="range" id="speedSlider" class="slider" min="0" max="1024" value="512" oninput="updateAndSendSliderValue(this.value)">
+        <input type="range" id="speedSlider" class="slider" min="300" max="700" value="440" oninput="updateAndSendSliderValue(this.value)">
         <div class="value-display">Wert: <span id="sliderValue">512</span></div>
     </div>
 
