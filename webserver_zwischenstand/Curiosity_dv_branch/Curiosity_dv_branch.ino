@@ -74,6 +74,8 @@ void setup() {
     server.on("/drivepanel/ArrowLeft", handleButtonL);
     server.on("/drivepanel/ArrowRight", handleButtonR);
 
+    server.on("/drivepanel/p", handleButtonP);
+    server.on("/drivepanel/p_release", handleButtonP_release);
     // Set up the API endpoint for /lol (JSON response)
     server.on("/var", handleVariable);
     server.on("/drivepanel/honk", handleHonk);
@@ -178,6 +180,19 @@ void handleButtonWRelease() {
     Serial.println("w_release");
     lego.SingleOutput(0, PWM_BRK, RED, CH4);
     server.send(200, "text/plain", "Button 3 release");
+}
+
+void handleButtonP() {
+     int pwmwert;
+    Serial.println("w pressed, SPEED = " + String(SPEED));
+    lego.SingleOutput(0, PWM_REV6, BLUE, CH1);
+    server.send(200, "text/plain", "Button p pressed");
+}
+
+void handleButtonP_release() {
+    Serial.println("p_release");
+    lego.SingleOutput(0, PWM_BRK, BLUE, CH1);
+    server.send(200, "text/plain", "Button p release");
 }
 //s or backwards
 void handleButtonS() {

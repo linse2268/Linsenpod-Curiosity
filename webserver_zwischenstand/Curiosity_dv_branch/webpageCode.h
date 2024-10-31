@@ -2,7 +2,7 @@
 
 
 //driving endpoint html code
-const char button_js_script[] =
+const char drivepanel[] =
 R"=====(  
     
 <html>
@@ -314,6 +314,7 @@ R"=====(
         a: false,
         s: false,
         d: false,
+        p: false,
         up: false,
         down: false,
         left: false,
@@ -343,6 +344,12 @@ R"=====(
           case "d":
             if (!keysPressed.d) {
               keysPressed.d = true;
+              updateMovement(event);
+            }
+            break;
+          case "p":
+            if (!keysPressed.p) {
+              keysPressed.p = true;
               updateMovement(event);
             }
             break;
@@ -389,6 +396,10 @@ R"=====(
             break;
           case "d":
             keysPressed.d = false;
+            updateMovement(event);
+            break;
+          case "p":
+            keysPressed.p = false;
             updateMovement(event);
             break;
           case "ArrowUp":
