@@ -25,7 +25,7 @@ ESP8266WebServer server(80); // Create web server on port 80
 LEGOPowerFunctions lego(15); //calibrates the ir transmittor to port 15(gpio8 -> D8)
 
 int SPEED = 4; //starting speed cap
-unsigned int sliderValue = 512;
+unsigned int sliderValue = 51;
 //setup function
 void setup() {
     Serial.begin(9600);
@@ -78,7 +78,7 @@ void setup() {
     server.on("/var", handleVariable);
     server.on("/drivepanel/honk", handleHonk);
 
-    server.on("/json_slider_page", handle_json_slider_page);
+    
     server.on("/json_test", HTTP_POST, handleData);
 
 
@@ -119,7 +119,7 @@ void handleHome() {
 }
 // endpoint on [ip]/drivepanel ->the main oage for driving the rover
 void handledrivepanel() {
-    server.send(200, "text/html", button_js_script); // Send button test script
+    server.send(200, "text/html", drivepanel); // Send button test script
 }
 
 void handleData() {
@@ -153,9 +153,7 @@ void handleData() {
 }
 
 
-void handle_json_slider_page(){
-  server.send(200, "text/html", json_slider_page);
-}
+
 
 //steering endpoints
 //w or fwd
@@ -307,7 +305,7 @@ void handleVariable() {
 }
 
 void handleHonk(){
-  tone(12, 700);
+  tone(12, sliderValue*10);
   delay(1000);
   noTone(12);
   server.send(200, "text/plain", "honked");
