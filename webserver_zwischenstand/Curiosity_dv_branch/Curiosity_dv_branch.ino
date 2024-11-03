@@ -1,4 +1,3 @@
-//test if git works 2
 //include the libraries
 #include <legopowerfunctions.h>
 #include <ESP8266WiFi.h>
