@@ -182,18 +182,29 @@ void handleButtonWRelease() {
     server.send(200, "text/plain", "Button 3 release");
 }
 
+
+
+
 void handleButtonP() {
      int pwmwert;
     Serial.println("w pressed, SPEED = " + String(SPEED));
-    lego.SingleOutput(0, PWM_REV6, BLUE, CH1);
+    //lego.SingleOutput(0, PWM_REV6, BLUE, CH1);
     server.send(200, "text/plain", "Button p pressed");
 }
-
+//added, dass wenn man p loslässt, der motor/der launcher sich einmal dreht
 void handleButtonP_release() {
     Serial.println("p_release");
+    lego.SingleOutput(0, PWM_REV6, BLUE, CH1);
+    delay(1000);
     lego.SingleOutput(0, PWM_BRK, BLUE, CH1);
     server.send(200, "text/plain", "Button p release");
 }
+
+
+
+
+
+
 //s or backwards
 void handleButtonS() {
     int pwmwert;
