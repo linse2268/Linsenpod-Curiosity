@@ -7,7 +7,7 @@ R"=====(
     
 <html>
   <head>
-    <title>Drivepanel</title>
+    <title>Steuerung</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -37,7 +37,7 @@ R"=====(
       }
       body {
         width: 98vw;
-        height: calc(100vh - 2vw);
+        height: 98vh;
         padding: 1vw;
 
         display: grid;
@@ -52,6 +52,10 @@ R"=====(
         border-radius: 1vw;
         border: none;
         font-size: 2em;
+        transition: 200ms;
+      }
+      button:hover{
+        background-color: var(--backgroundcolorHover);
       }
       div {
         background-color: var(--backgroundcolor);
@@ -61,6 +65,7 @@ R"=====(
         justify-content: center;
         align-items: center;
         font-size: 2em;
+        transition: 200ms;
       }
       img {
         display: block;
@@ -72,6 +77,19 @@ R"=====(
         grid-row: 1 / 6;
         grid-column: 1 / 5;
         border-radius: 1vw;
+      }
+      #fakten {
+        grid-column: 5/7;
+        grid-row: 1/7;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        flex-shrink: 0;
+        padding-top: 2vw;
+      }
+      
+      ul{
+        font-size: 0.4em;
       }
       #banner {
         padding: 0;
@@ -220,6 +238,11 @@ R"=====(
     </style>
   </head>
   <body>
+    <div id="fakten"><h4>Fakten:</h1><div><ul><li>maximale Geschwindigkeit: 5km/h</li><li>Zugkraft: 5 Newton</li><li>Gewicht: 400g</li><li>Abmessungen: 20*30*40cm</li></ul></div></div>
+    <div>2</div>
+    <div>3</div>
+
+
     <img id="img" src="http://192.168.18.168:8080/video" />
     <button class="button" id="w" onclick="sendButtonState('honk')">
       HUPE
@@ -235,20 +258,6 @@ R"=====(
     </button>
     <div id="counterDisplay">Speed: <span id="counter">4</span>/7</div>
     <div id="testFürWASD">1</div>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-    <div>10</div>
-    <div>11</div>
-    <div>12</div>
-    <div>13</div>
-    <div>14</div>
     <!--Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)--->
     <div id="big">
       <div id="lilBig">
@@ -507,6 +516,7 @@ R"=====(
     </script>
   </body>
 </html>
+
 )=====";
 
 //normal homepage
