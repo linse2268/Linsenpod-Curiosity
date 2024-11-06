@@ -584,152 +584,150 @@ select {
 const char homepagecode[] =
 R"=====(
   <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
-        <title>linsenpod curiosity home</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <title>linsenpod curiosity home</title>
 
-        <link rel="icon" href="https://squidpod.github.io/images/pics/final_light.png">
+    <link rel="icon" href="https://squidpod.github.io/images/pics/final_light.png">
+    
+    <style>
+        :root{
+            --backgroundcolor: rgb(53, 53, 53);
+        }
+        *{
+            font-family: "Fredoka", sans-serif;
+            color: rgb(185, 185, 185);
+            
+            
+        }
+
+        body{
+            background-color: rgb(29, 29, 29);
+            padding: 2vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1{
+            font-size: 3.5vw;
+        }
+
+        button{
+            background-color: var(--backgroundcolor);
+            border: none;
+            font-size: 2em;
+            border-radius: 1vw;
+        }
+        ul{
+            font-size: 2vw;
+        }
+        p{
+            font-size: 1.5vw;
+        }
+
+        #banner{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #linsenpod{
+            font-size: 4vw;
+            font-weight: 400;
+            color: rgb(150, 150, 150);
+        }
+
+        #Curiosity{
+            font-size: 7vw;
+        }
+      
+        #steeringSite{
+            font-weight: bolder;
+            font-size: 3.5vw;
+            padding: 2vw 4vw;
+            animation: Shadow 3s ease-in-out infinite;
+            
+        }
+
+        @keyframes Shadow{
+            0%{box-shadow: 0;}
+            50%{box-shadow:  0 0 3vw rgba(0, 0, 0, 0.66); transform: scale(1.02); background-color: rgb(66, 66, 66);}
+            100%{box-shadow: 0;}
+        }
+
+        #info{
+            margin-top: 5vw;
+            width: 80vw;
+            background-color: var(--backgroundcolor);
+            border-radius: 1vw;
+            padding: 2vw 3vw;
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         
-        <style>
-            :root{
-                --backgroundcolor: rgb(53, 53, 53);
-            }
-            *{
-                font-family: "Fredoka", sans-serif;
-                color: rgb(185, 185, 185);
-                
-                
-            }
+        #idee{
+            margin: 0;
+            padding: 0;
+        }
+        #githublink{
+            transition: 300ms;
+        }
+        #githublink:hover{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <h3 id="linsenpod">LinsenPod</h3><h1 id="Curiosity">Curiosity</h1>
+    </div>
+    <a href="/drivepanel"><button id="steeringSite">Probier mich aus!</button></a>
 
-            body{
-                background-color: rgb(29, 29, 29);
-                padding: 2vw;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            h1{
-                font-size: 3.5vw;
-            }
-
-            button{
-                background-color: var(--backgroundcolor);
-                border: none;
-                font-size: 2em;
-                border-radius: 1vw;
-            }
-            ul{
-                font-size: 2vw;
-            }
-            p{
-                font-size: 1.5vw;
-            }
-
-            #banner{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            #linsenpod{
-                font-size: 4vw;
-                font-weight: 400;
-                color: rgb(150, 150, 150);
-            }
-
-            #Curiosity{
-                font-size: 7vw;
-            }
-          
-            #steeringSite{
-                font-weight: bolder;
-                font-size: 3.5vw;
-                padding: 2vw 4vw;
-                animation: Shadow 3s ease-in-out infinite;
-                
-            }
-
-            @keyframes Shadow{
-                0%{box-shadow: 0;}
-                50%{box-shadow:  0 0 3vw rgba(0, 0, 0, 0.66); transform: scale(1.02); background-color: rgb(66, 66, 66);}
-                100%{box-shadow: 0;}
-            }
-
-            #info{
-                margin-top: 5vw;
-                width: 80vw;
-                background-color: var(--backgroundcolor);
-                border-radius: 1vw;
-                padding: 2vw 3vw;
-                padding-bottom: 0;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            #idee{
-                margin: 0;
-                padding: 0;
-            }
-            #githublink{
-                transition: 300ms;
-            }
-            #githublink:hover{
-                transform: scale(1.1);
-            }
-        </style>
-    </head>
-    <body>
-        <div id="banner">
-            <h<3 id="linsenpod">LinsenPod</h3><h1 id="Curiosity">Curiosity</h1>
-        </div>
-        <a href="/drivepanel"><button id="steeringSite">Probier mich aus!</button></a>
-
-
-        div id="info">
-            
-                <div id="info">
+<div id="info">
     <h1>Unsere Vision:</h1>
     <div id="idee">
         <p>Curiosity ist ein ferngesteuerter Rover, der über eine Website bedient wird. Auf dieser Website wird ein Live-Video von einer auf dem Rover angebrachten Kamera übertragen, sodass die Umgebung des Rovers jederzeit im Blick ist. Der ESP8266 Mikrocontroller bildet das Herzstück des Systems und stellt eine Verbindung über WLAN her, die es ermöglicht, den Rover bequem und sicher innerhalb desselben Netzwerks zu steuern.</p>
     </div>
 </div>
 
-            
-            
-                <!--
-                <h1>Materialien:</h1>
-                <ul>
-                    <li>ESP 8266</li>
-                    <li>Arudino Uno</li>
-                    <li>Lego Technic</li>
-                    <li>Handy</li>
-                    
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                -->
 
-                <h1>Tech-Stack:</h1>
-                <ul>
-                    <li>C++</li>
-                    <li>Html</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Notion</li>
-                    <li>Github</li>
-                    <li>Arduino IDE</li>
-                    <li>VS Code</li>
-                </ul>
-                <a href="https://github.com/linse2268/Linsenpod-Curiosity/" target="_blank"><h3 id="githublink">Unser Github Repository</h3></a>
-                <p>von Rémy Göttlich und Linus Bös im Rahmen des Informatik Unterrichtes bei Herrn Hagedorn 2024/2025</p>
-        </div>
-    </body>
-    </html>
+        
+        
+            <!--
+            <h1>Materialien:</h1>
+            <ul>
+                <li>ESP 8266</li>
+                <li>Arudino Uno</li>
+                <li>Lego Technic</li>
+                <li>Handy</li>
+                
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            -->
+
+            <h1>Tech-Stack:</h1>
+            <ul>
+                <li>C++</li>
+                <li>Html</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Notion</li>
+                <li>Github</li>
+                <li>Arduino IDE</li>
+                <li>VS Code</li>
+            </ul>
+            <a href="https://github.com/linse2268/Linsenpod-Curiosity/" target="_blank"><h3 id="githublink">Unser Github Repository</h3></a>
+            <p>von Rémy Göttlich und Linus Bös im Rahmen des Informatik Unterrichtes bei Herrn Hagedorn 2024/2025</p>
+    </div>
+</body>
+</html>
 )=====";
