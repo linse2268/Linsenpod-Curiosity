@@ -19,231 +19,255 @@ R"=====(
       rel="icon"
       href="https://squidpod.github.io/images/pics/final_light.png"
     />
-
     <style>
       :root {
-        --backgroundcolor: rgb(53, 53, 53);
-        --fontcolor: rgb(185, 185, 185);
-        --bodybackgroundcolor: rgb(29, 29, 29);
-        --linsenPodcolor: rgb(150, 150, 150);
-        --backgroundcolorHover: rgb(66, 66, 66);
-      }
-      * {
-        font-family: "Fredoka", sans-serif;
-        color: var(--fontcolor);
-        margin: 0;
-        padding: 0;
-        user-select: none;
-      }
-      body {
-        width: 98vw;
-        height: 98vh;
-        padding: 1vw;
+  --backgroundcolor: rgb(53, 53, 53);
+  --fontcolor: rgb(185, 185, 185);
+  --bodybackgroundcolor: rgb(29, 29, 29);
+  --linsenPodcolor: rgb(150, 150, 150);
+  --backgroundcolorHover: rgb(66, 66, 66);
+}
+* {
+  font-family: "Fredoka", sans-serif;
+  color: var(--fontcolor);
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+body {
+  width: 98vw;
+  height: 98vh;
+  padding: 1vw;
 
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        gap: 1vw;
-        background-color: var(--bodybackgroundcolor);
-        overflow: hidden;
-      }
-      button {
-        background-color: var(--backgroundcolor);
-        border-radius: 1vw;
-        border: none;
-        font-size: 2em;
-        transition: 200ms;
-      }
-      button:hover{
-        background-color: var(--backgroundcolorHover);
-      }
-      div {
-        background-color: var(--backgroundcolor);
-        border-radius: 1vw;
-        border: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 2em;
-        transition: 200ms;
-      }
-      img {
-        display: block;
-        user-select: none;
-        margin: auto;
-        background-color: var(--backgroundcolor);
-        width: 100%;
-        height: 100%;
-        grid-row: 1 / 6;
-        grid-column: 1 / 5;
-        border-radius: 1vw;
-      }
-      #fakten {
-        grid-column: 5/7;
-        grid-row: 1/7;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        flex-shrink: 0;
-        padding-top: 2vw;
-      }
-      
-      ul{
-        font-size: 0.4em;
-      }
-      #banner {
-        padding: 0;
-        margin: 0;
-        grid-column: 5 / 7;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1vw;
+  background-color: var(--bodybackgroundcolor);
+  overflow: hidden;
+  transition: 200ms;
+}
+button {
+  background-color: var(--backgroundcolor);
+  border-radius: 1vw;
+  border: none;
+  font-size: 2em;
+  transition: 200ms;
+}
+button:hover {
+  background-color: var(--backgroundcolorHover);
+}
+div {
+  background-color: var(--backgroundcolor);
+  border-radius: 1vw;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  transition: 200ms;
+}
 
-      #linsenpodBanner {
-        font-size: 1.5vw;
-        font-weight: 300;
-        color: var(--linsenPodcolor);
-        padding-right: 0.5vw;
-      }
-      #curiosityBanner {
-        font-size: 3vw;
-      }
+#bildContainer {
+  grid-row: 1 / 6;
+  grid-column: 1 / 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#fadenkreuzContainer {
+  width: 2vw;
+  aspect-ratio: 1/1;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-      #big {
-        border-radius: 0;
-        width: 100vw;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(10px);
-      }
-      @keyframes backgroundBlur {
-        0% {
-          backdrop-filter: blur(0px);
-          display: flex;
-          background-color: rgba(0, 0, 0, 0);
-        }
-        100% {
-          backdrop-filter: blur(10px);
-          display: flex;
-        }
-      }
-      @keyframes backgroundBlurReverse {
-        0% {
-          backdrop-filter: blur(10px);
-        }
-        100% {
-          backdrop-filter: blur(0px);
-          background-color: rgba(0, 0, 0, 0);
-        }
-      }
-      #lilBig {
-        width: 60vw;
-        height: 70vh;
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: start;
-        padding: 1vw;
-        animation-name: menuOpenAnimation;
-        animation-duration: 150ms;
-        animation-timing-function: linear;
-      }
-      @keyframes menuOpenAnimation {
-        0% {
-          opacity: 0;
-          scale: 0.7;
-        }
-        100% {
-          opacity: 1;
-          scale: 1;
-        }
-      }
-      @keyframes menuCloseAnimation {
-        0% {
-          opacity: 1;
-          scale: 1;
-        }
-        100% {
-          opacity: 0;
-          scale: 0.7;
-        }
-      }
-      #lilBigButton {
-        font-size: 2vw;
-        font-weight: bolder;
-        width: 3vw;
-        height: 3vw;
-        background-color: var(--backgroundcolorHover);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+#img {
+  display: block;
+  user-select: none;
+  background-color: var(--backgroundcolor);
+  width: 100%;
+  height: 100%;
+  transition: 200ms;
 
-      #logoinfo {
-        width: 5vw;
-        height: 5vw;
-        margin: 1vw;
-      }
+  border-radius: 1vw;
+}
 
-      #lilBigHeader {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-      }
-      #lilbigcontent {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-      .menuContent {
-        width: 90%;
-        display: flex;
-        justify-content: space-between;
-        border: 3px solid var(--backgroundcolorHover);
-        padding: 0.5vw;
-        margin-bottom: 0.5vw;
-      }
-      #themeLabel {
-        font-size: 1.5rem;
-      }
-      #info {
-        width: 100%;
-        font-size: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        bottom: 1vw;
-      }
-      select {
-        background-color: var(--backgroundcolor);
-        border: 2px solid var(--backgroundcolorHover);
-        border-radius: 0.5vw;
-        font-size: 1.5rem;
-      }
-      .buttons {
-        transition: 200ms;
-      }
-      .buttons:hover {
-        background-color: var(--backgroundcolorHover);
-      }
+#fakten {
+  grid-column: 5/7;
+  grid-row: 1/7;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  flex-shrink: 0;
+  padding-top: 2vw;
+}
+
+ul {
+  font-size: 0.4em;
+  width: 80%;
+}
+#banner {
+  padding: 0;
+  margin: 0;
+  grid-column: 5 / 7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#linsenpodBanner {
+  font-size: 1.5vw;
+  font-weight: 300;
+  color: var(--linsenPodcolor);
+  padding-right: 0.5vw;
+}
+#curiosityBanner {
+  font-size: 3vw;
+}
+
+#big {
+  border-radius: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+@keyframes backgroundBlur {
+  0% {
+    backdrop-filter: blur(0px);
+    display: flex;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    backdrop-filter: blur(10px);
+    display: flex;
+  }
+}
+@keyframes backgroundBlurReverse {
+  0% {
+    backdrop-filter: blur(10px);
+  }
+  100% {
+    backdrop-filter: blur(0px);
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+#lilBig {
+  width: 60vw;
+  height: 70vh;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 1vw;
+  animation-name: menuOpenAnimation;
+  animation-duration: 150ms;
+  animation-timing-function: linear;
+}
+@keyframes menuOpenAnimation {
+  0% {
+    opacity: 0;
+    scale: 0.7;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes menuCloseAnimation {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.7;
+  }
+}
+#lilBigButton {
+  font-size: 2vw;
+  font-weight: bolder;
+  width: 3vw;
+  height: 3vw;
+  background-color: var(--backgroundcolorHover);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logoinfo {
+  width: 5vw;
+  height: 5vw;
+  margin: 1vw;
+}
+
+#lilBigHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#lilbigcontent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.menuContent {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid var(--backgroundcolorHover);
+  padding: 0.5vw;
+  margin-bottom: 0.5vw;
+}
+#themeLabel {
+  font-size: 1.5rem;
+}
+#info {
+  width: 100%;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 1vw;
+}
+select {
+  background-color: var(--backgroundcolor);
+  border: 2px solid var(--backgroundcolorHover);
+  border-radius: 0.5vw;
+  font-size: 1.5rem;
+}
+.buttons {
+  transition: 200ms;
+}
+.buttons:hover {
+  background-color: var(--backgroundcolorHover);
+}
+
     </style>
   </head>
   <body>
-    <div id="fakten"><h4>Fakten:</h1><div><ul><li>maximale Geschwindigkeit: 5km/h</li><li>Zugkraft: 5 Newton</li><li>Gewicht: 400g</li><li>Abmessungen: 20*30*40cm</li></ul></div></div>
+    <div id="fakten"><h4>Fakten:</h1><div><ul><li>maximale Geschwindigkeit: 5km/h</li><li>Zugkraft: 5 Newton</li><li>Gewicht: 400g</li><li>Höhe: 20cm</li><li>Breite: 20cm</li><li>Länge: 30cm</li> <li>Empfang: definiert nach Reichweite des benutzten Netzwerks</li></ul></div></div>
     <div>2</div>
     <div>3</div>
 
-
-    <img id="img" src="http://192.168.18.168:8080/video" />
+    <div id="bildContainer">
+      <div id="fadenkreuzContainer">
+        <img src="https://squidpod.github.io/images/pics/aim_Dark.png" alt="" width="50">
+      </div>
+      <img id="img" src="http://192.168.18.168:8080/video" />
+    </div>
+    
     <button class="button" id="w" onclick="sendButtonState('honk')">
       HUPE
     </button>
