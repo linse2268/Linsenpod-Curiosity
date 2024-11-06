@@ -625,19 +625,20 @@ R"=====(
     </head>
     <body>
         <div id="banner">
-            <h3 id="linsenpod">LinsenPod</h3><h1 id="Curiosity">Curiosity</h1>
+            <h<3 id="linsenpod">LinsenPod</h3><h1 id="Curiosity">Curiosity</h1>
         </div>
         <a href="/drivepanel"><button id="steeringSite">Probier mich aus!</button></a>
 
 
-        <div id="info">
+        div id="info">
             
-                <h1>Unsere Idee:</h1>
-                <div id="idee">
-                    <p>Curiosity ist ein Auto, das über eine Website gesteuert wird, auf der ein Livebild von einer Handykamera zu sehen ist, die sich auf dem Auto befindet. Die Website läuft auf einem ESP 8266 Mikrokontroller, der über WLAN mit einem Browser verbunden werden kann. So kann man das Auto überall dort fahren, wo das Auto dasselbe WLAN wie der Browser hat. Der Fahrer kann jedoch bequem an einem Platz bleiben.</p>
+                <div id="info">
+    <h1>Unsere Vision:</h1>
+    <div id="idee">
+        <p>Curiosity ist ein ferngesteuerter Rover, der über eine Website bedient wird. Auf dieser Website wird ein Live-Video von einer auf dem Rover angebrachten Kamera übertragen, sodass die Umgebung des Rovers jederzeit im Blick ist. Der ESP8266 Mikrocontroller bildet das Herzstück des Systems und stellt eine Verbindung über WLAN her, die es ermöglicht, den Rover bequem und sicher innerhalb desselben Netzwerks zu steuern.</p>
+    </div>
+</div>
 
-                    <p>Weitere Features, wie eine Hinderniserkennung durch einen Ultraschallsensor, der kontinuierlich den Abstand zu Objekten vor sich misst, machen das Fahrerlebnis komfortabler. Außerdem verfügt das Auto über einen Lautsprecher und Lichter, um im Weg stehende Personen auf sich aufmerksam zu machen.</p>
-                </div>
             
             
                 <!--
