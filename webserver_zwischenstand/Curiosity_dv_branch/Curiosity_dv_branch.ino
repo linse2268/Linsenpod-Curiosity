@@ -56,23 +56,23 @@ void setup() {
     server.on("/", handleApiRequest);
     server.on("/home", handleApiRequest);
     server.on("/drivepanel", handleApiRequest);
-    //different inputs
+    //different inputs for driving n steering
     server.on("/drivepanel/w", handleButtonW);
     server.on("/drivepanel/w_release", handleButtonWRelease);
-    server.on("/drivepanel/a", handleButton2);
-    server.on("/drivepanel/a_release", handleButton2Release);
+    server.on("/drivepanel/a", handleButtonA);
+    server.on("/drivepanel/a_release", handleButtonARelease);
     server.on("/drivepanel/s", handleButtonS);
     server.on("/drivepanel/s_release", handleButtonSRelease);
-    server.on("/drivepanel/d", handleButton4);
-    server.on("/drivepanel/d_release", handleButton4Release);
+    server.on("/drivepanel/d", handleButtonD);
+    server.on("/drivepanel/d_release", handleButtonDRelease);
 
     server.on("/drivepanel/ArrowUp", handleButtonUP);
     server.on("/drivepanel/ArrowUp_release", handleButtonUPRelease);
     server.on("/drivepanel/ArrowDown", handleButtonDOWN);
     server.on("/drivepanel/ArrowDown_release", handleButtonDOWNRelease);
     
-    server.on("/drivepanel/ArrowLeft", handleButtonL);
-    server.on("/drivepanel/ArrowRight", handleButtonR);
+    server.on("/drivepanel/ArrowLeft", handleArrowL);
+    server.on("/drivepanel/ArrowRight", handleArrowR);
 
     server.on("/drivepanel/p", handleButtonP);
     server.on("/drivepanel/p_release", handleButtonP_release);
@@ -230,26 +230,26 @@ void handleButtonSRelease() {
 }
 
 //steering for a or left
-void handleButton2() {
+void handleButtonA() {
     Serial.println("a");
     //uhrzeiger richtung und nach links
     lego.SingleOutput(0, PWM_REV7, BLUE, CH4);
     server.send(200, "text/plain", "Button 2");
 }
 
-void handleButton2Release() {
+void handleButtonARelease() {
     Serial.println("a_release");
     lego.SingleOutput(0, PWM_BRK, BLUE, CH4);
     server.send(200, "text/plain", "Button 2 release");
 }
 //d or steering for right
-void handleButton4() {
+void handleButtonD() {
     Serial.println("d");
     lego.SingleOutput(0, PWM_FWD7, BLUE, CH4);
     server.send(200, "text/plain", "Button 4");
 }
 
-void handleButton4Release() {
+void handleButtonDRelease() {
     Serial.println("d_release");
     lego.SingleOutput(0, PWM_BRK, BLUE, CH4);
     server.send(200, "text/plain", "Button 4 release");
@@ -304,7 +304,7 @@ void handleButtonDOWNRelease() {
 }
 
 // l and r are left and right arrows -> regulating the speed from 1 - 7
-void handleButtonL() {
+void handleArrowL() {
     if (SPEED>1){
       Serial.println("speed down");
       SPEED -= 1;
@@ -312,7 +312,7 @@ void handleButtonL() {
     }
     
 }
-void handleButtonR() {
+void handleArrowR() {
   if (SPEED<7){
     Serial.println("speed up");
     SPEED += 1;
