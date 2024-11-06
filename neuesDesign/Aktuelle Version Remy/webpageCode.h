@@ -4,8 +4,7 @@
 //driving endpoint html code
 const char drivepanel[] =
 R"=====(  
-    
-<html>
+    <html>
   <head>
     <title>Steuerung</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -263,7 +262,7 @@ select {
 
     <div id="bildContainer">
       <div id="fadenkreuzContainer">
-        <img src="https://squidpod.github.io/images/pics/aim_Dark.png" alt="" width="50">
+        <img src="https://squidpod.github.io/images/pics/aim_Dark.png" alt="" width="50" id="crosshair">
       </div>
       <img id="img" src="http://192.168.18.168:8080/video" />
     </div>
@@ -491,9 +490,14 @@ select {
         menu.style = "display: flex; animation: backgroundBlur 100ms linear;";
         menuContent.style = "animation-name: menuOpenAnimation;";
       }
+      const crosshair = document.getElementById('crosshair');
 
+      const lightCrosshairSource = "https://squidpod.github.io/images/pics/aim_Light.png";
+      const darkCrosshairSource = "https://squidpod.github.io/images/pics/aim_Dark.png";
       function lightDark(dark) {
         if (dark == "true") {
+          crosshair.src = darkCrosshairSource;
+
           document.documentElement.style.setProperty(
             "--backgroundcolor",
             "rgb(53, 53, 53)"
@@ -515,6 +519,7 @@ select {
             "rgb(66, 66, 66)"
           );
         } else if (dark == "false") {
+          crosshair.src = lightCrosshairSource;
           document.documentElement.style.setProperty(
             "--backgroundcolor",
             "rgb(202, 202, 202)"
@@ -540,6 +545,7 @@ select {
     </script>
   </body>
 </html>
+
 
 )=====";
 
