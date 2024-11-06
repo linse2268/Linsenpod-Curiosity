@@ -35,7 +35,7 @@ R"=====(
 }
 body {
   width: 98vw;
-  height: 98vh;
+  height: 96vh;
   padding: 1vw;
 
   display: grid;
@@ -51,7 +51,7 @@ button {
   border-radius: 1vw;
   border: none;
   font-size: 2em;
-  transition: 200ms;
+  transition: 300ms;
 }
 button:hover {
   background-color: var(--backgroundcolorHover);
@@ -253,10 +253,30 @@ select {
   background-color: var(--backgroundcolorHover);
 }
 
+#settingsConatiner{
+  width: calc(100% - 2vw);
+  height: calc(100% - 2vw);
+  padding: 1vw;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+#settings:hover{
+  transform: rotateZ(90deg);
+  scale: 1.05;
+  background-color: transparent;
+  
+}
+
     </style>
   </head>
   <body>
-    <div id="fakten"><h4>Fakten:</h1><div><ul><li>maximale Geschwindigkeit: 5km/h</li><li>Zugkraft: 5 Newton</li><li>Gewicht: 400g</li><li>Höhe: 20cm</li><li>Breite: 20cm</li><li>Länge: 30cm</li> <li>Empfang: definiert nach Reichweite des benutzten Netzwerks</li></ul></div></div>
+    <div id="fakten"><h4>Fakten:</h1><div><ul><li>maximale Geschwindigkeit: 5km/h</li><li>Zugkraft: 5 Newton<li><li>Gewicht: 400g</li><li>Höhe: 20cm</li><li>Breite: 20cm</li><li>Länge: 30cm</li> <li>Empfang: definiert nach Reichweite des benutzten Netzwerks</li></ul></div>
+    <div id="settingsConatiner">
+      <button id="settings" onclick="openMenu()"><img id="settingIcon" src="https://squidpod.github.io/images/pics/settings%20forDarkmode.png" alt="" width="50"></button>
+    </div>
+    </div>
     <div>2</div>
     <div>3</div>
 
@@ -320,11 +340,11 @@ select {
       </div>
     </div>
     <!--Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)--->
-    <button class="button" id="banner" onclick="openMenu()">
+    <div class="button" id="banner" >
       <h5 id="linsenpodBanner">LinsenPod</h5>
       <h3 id="curiosityBanner"><b>Curiosity</b></h3>
       <button id="menuOpenButton"></button>
-    </button>
+    </div>
 
     <script>
       function sendButtonState(state) {
@@ -491,11 +511,18 @@ select {
         menuContent.style = "animation-name: menuOpenAnimation;";
       }
       const crosshair = document.getElementById('crosshair');
+      const settings = document.getElementById('settingIcon');
+
+      const darkModeSettingsIcon = "https://squidpod.github.io/images/pics/settings%20forDarkmode.png";
+      const lightModeSettingsIcon = "https://squidpod.github.io/images/pics/settings%20forLightMode.png";
 
       const lightCrosshairSource = "https://squidpod.github.io/images/pics/aim_Light.png";
       const darkCrosshairSource = "https://squidpod.github.io/images/pics/aim_Dark.png";
+
       function lightDark(dark) {
         if (dark == "true") {
+          settings.src = darkModeSettingsIcon;
+
           crosshair.src = darkCrosshairSource;
 
           document.documentElement.style.setProperty(
@@ -519,7 +546,10 @@ select {
             "rgb(66, 66, 66)"
           );
         } else if (dark == "false") {
+          settings.src = lightModeSettingsIcon;
           crosshair.src = lightCrosshairSource;
+
+
           document.documentElement.style.setProperty(
             "--backgroundcolor",
             "rgb(202, 202, 202)"
@@ -545,6 +575,7 @@ select {
     </script>
   </body>
 </html>
+
 
 
 )=====";
