@@ -1,10 +1,4 @@
 # Arduino Project Linsenpod 
-## **Ideen**
-### 1. Web controlled Car
-- Esp8266
-- controlled via Website ? how? -> **fast enough???**
-- savety features (Ultrasound sensor)
-
 
 ## **Umsetzung**
 ### 1. Verbinung von ESP und Browser
