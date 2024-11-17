@@ -3,8 +3,8 @@
 
 //driving endpoint html code
 const char drivepanel[] =
-R"=====(  
-    <!DOCTYPE html>
+R"=====(
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -535,7 +535,7 @@ R"=====(
             <li>Pfeil links - niedrigere Geschwindigkeitsstufe</li>
             <li>Pfeil oben/unten - Kamera entsprechend schwenken</li>
           </ul>
-          <h4>Fakten:</h1><ul>
+          <h4>Fakten:</h4><ul>
             <li>maximale Geschwindigkeit: 5km/h</li>
             <li>Zugkraft: 5 Newton</li>
             <li>Gewicht: 400g</li>
