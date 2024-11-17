@@ -70,7 +70,7 @@ void setup() {
     server.on("/drivepanel/ArrowUp_release", handleButtonUPRelease);
     server.on("/drivepanel/ArrowDown", handleButtonDOWN);
     server.on("/drivepanel/ArrowDown_release", handleButtonDOWNRelease);
-    
+          
     server.on("/drivepanel/ArrowLeft", handleArrowL);
     server.on("/drivepanel/ArrowRight", handleArrowR);
 
@@ -199,10 +199,6 @@ void handleButtonP_release() {
     lego.SingleOutput(0, PWM_BRK, BLUE, CH1);
     server.send(200, "text/plain", "Button p release");
 }
-
-
-
-
 
 
 //s or backwards
