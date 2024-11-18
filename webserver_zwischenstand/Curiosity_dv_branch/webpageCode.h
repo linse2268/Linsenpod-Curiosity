@@ -18,7 +18,7 @@ R"=====(
       href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
       rel="stylesheet"
     />
-    <title>17.11.2024</title>
+    <title>Drivepanel</title>
     <style>
       :root {
         --backgroundcolor: rgb(53, 53, 53);
