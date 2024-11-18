@@ -8,14 +8,17 @@ R"=====(
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
       rel="stylesheet"
     />
-    <title>Drivepanel</title>
+    <title>17.11.2024</title>
     <style>
       :root {
         --backgroundcolor: rgb(53, 53, 53);
@@ -90,7 +93,6 @@ R"=====(
         transition: 200ms;
       }
 
-      
       .desktopSteeringButton {
         background-color: var(--backgroundcolor);
         border-radius: 1dvw;
@@ -217,7 +219,6 @@ R"=====(
         animation-timing-function: linear;
         background-color: var(--backgroundcolor);
         border-radius: 1dvw;
-        
       }
       @keyframes menuOpenAnimation {
         0% {
@@ -261,7 +262,7 @@ R"=====(
         display: flex;
         justify-content: space-between;
       }
-      #lilBigHeaderBanner{
+      #lilBigHeaderBanner {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -284,7 +285,7 @@ R"=====(
         font-size: 1.5rem;
       }
 
-      #desktopDivNr2{
+      #desktopDivNr2 {
         grid-column: 1/3;
         grid-row: 6/8;
         display: flex;
@@ -321,9 +322,8 @@ R"=====(
         align-items: end;
         position: static;
         top: -10vh;
-        
       }
-      #settings{
+      #settings {
         background-color: transparent;
         transition: 300ms;
         border: none;
@@ -349,29 +349,38 @@ R"=====(
         }
       }
 
-    /* Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles*/
-    /* Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles*/
-    /* Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles*/
+      #counterDisplay {
+        grid-column: 1/3;
+        grid-row: 6/8;
+      }
+      #desktopShootButton {
+        grid-column: 3/5;
+        grid-row: 6/8;
+      }
+      .desktopTwoBigDisplays {
+        font-size: 3vw;
+      }
+      /* Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles*/
+      /* Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles*/
+      /* Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles-Mobile Styles*/
 
-    #mobileSteeringSite{
+      #mobileSteeringSite {
         width: 98dvw;
         height: calc(100dvh - 2dvw);
         background-color: var(--bodybackgroundcolor);
         padding: 1vw;
         gap: 1vw;
         display: none;
-        
-
-    }
-    #mobileBildContainer{
+      }
+      #mobileBildContainer {
         width: 90dvw;
         background-color: var(--backgroundcolor);
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    
-    #mobileImg{
+      }
+
+      #mobileImg {
         display: block;
         user-select: none;
         background-color: var(--backgroundcolor);
@@ -379,8 +388,8 @@ R"=====(
         height: 100%;
         transition: 200ms;
         border-radius: 1dvw;
-    }
-    #mobileFadenkreuzContainer{
+      }
+      #mobileFadenkreuzContainer {
         width: 85dvw;
         height: calc(100dvh - 2dvw);
         position: absolute;
@@ -388,90 +397,89 @@ R"=====(
         justify-content: space-between;
         align-items: center;
         padding: 0;
-    }
-
-    .mobileDivInsideImg{
-      height: calc(100% - 2dvw);
-      width: 18dvw;
-      padding: 1dvw;
-    }
-
-    #mobileBeschleunigungsButtonDiv{
-      display: flex;
-      justify-content: start;
-      align-items: center;
-    }
-    #mobileBeschleunigungsButtonDivDiv{
-      width: 10dvw;
-      height: 70dvh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1dvw;
-      gap: 1vw;
-    }
-
-    .mobileAccelerationButton{
-      height: 100%;
-      width: 100%;
-      border-radius: 1vw;
-      border: none;
-      background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-      font-size: 4rem;
-      font-weight: 900;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-    }
-    
-    #mobileSliderSteeringDiv{
-      display: flex;
-      justify-content: center;
-      align-items: end;
-      padding: 1vw;
-      height: calc(100% - 5.5vw);
-      padding-bottom: 5vw;
-      padding-left: 0;
-    }
-
-    #mobileSliderSteering{
-      width: 90%;
-      -webkit-appearance: none; 
-      appearance: none;
-      background: transparent;
-      margin: 0;
-    }
-
-
-    #mobileSliderSteering::-webkit-slider-runnable-track {
-      width: 100%;
-      height: 4.1vw;
-      background: var(--backgroundcolor);
-      border-radius: 2.2vw;
-      border: none;
       }
 
-    #mobileSliderSteering::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      height: 4vw;
-      width: 4vw;
-      background-color: var(--fontcolor);
-      border-radius: 50%;
-      position: relative;
-      
-    }
+      .mobileDivInsideImg {
+        height: calc(100% - 2dvw);
+        width: 18dvw;
+        padding: 1dvw;
+      }
 
-    #mobileFadenkreuzDiv{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+      #mobileBeschleunigungsButtonDiv {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+      }
+      #mobileBeschleunigungsButtonDivDiv {
+        width: 10dvw;
+        height: 70dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1dvw;
+        gap: 1vw;
+      }
 
-    #mobileOtherContent{
+      .mobileAccelerationButton {
+        height: 100%;
+        width: 100%;
+        border-radius: 1vw;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        font-size: 4rem;
+        font-weight: 900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: inset 0 0 1vw rgba(0, 0, 0, 0.6);
+      }
+
+      #mobileSliderSteeringDiv {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        padding: 1vw;
+        height: calc(100% - 5.5vw);
+        padding-bottom: 5vw;
+        padding-left: 0;
+      }
+
+      #mobileSliderSteering {
+        width: 90%;
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        margin: 0;
+      }
+
+      #mobileSliderSteering::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 4.1vw;
+        background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 2.2vw;
+        border: none;
+      }
+
+      #mobileSliderSteering::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 4vw;
+        width: 4vw;
+        background-color: var(--fontcolor);
+        border-radius: 50%;
+        position: relative;
+      }
+
+      #mobileFadenkreuzDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #mobileOtherContent {
         height: calc(100% - 2dvw);
         width: 10%;
         background-color: var(--backgroundcolor);
@@ -479,9 +487,9 @@ R"=====(
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    }
+      }
 
-    .mobileButtonOrDivs{
+      .mobileButtonOrDivs {
         background-color: var(--backgroundcolor);
         font-size: 2dvw;
         padding: 1dvw;
@@ -490,190 +498,299 @@ R"=====(
         justify-content: center;
         align-items: center;
         border: 2px solid var(--fontcolor);
-    }
+      }
 
-    .mobileLoadDivs{
+      .mobileLoadDivs {
         animation: load 500ms ease-out 1;
-    }
-    #mobileDriveButton{
+      }
+      #mobileDriveButton {
         background-color: rgba(60, 255, 0, 0.2);
-    }
-    #mobileBannerLogoDiv{
+      }
+      #mobileBannerLogoDiv {
         border: none;
-    }
-    #mobileBannerLogo{
+      }
+      #mobileBannerLogo {
         border: none;
         height: 15dvh;
         aspect-ratio: 1/1;
-    }
-    #askGyroskopePermissionDiv{
-      display: none;
-      background-color: var(--backgroundcolor);
-      width: 50dvw;
-      height: 60dvh;
-    }
-     </style>
+      }
+      #askGyroskopePermissionDiv {
+        display: none;
+        background-color: var(--backgroundcolor);
+        width: 50dvw;
+        height: 60dvh;
+      }
+    </style>
   </head>
   <body id="body">
     <div id="bodyContentAskDivice">
       <div id="askDiviceDiv" class="requeststBeforSteeringSite">
         <h1 id="askDiviceH1">What are you using?</h1>
         <div>
-          <button class="askDiviceButton" onclick="loadDesktop()">Desktop</button>
+          <button class="askDiviceButton" onclick="loadDesktop()">
+            Desktop
+          </button>
           <button class="askDiviceButton" onclick="loadMobile()">Mobile</button>
         </div>
       </div>
-      
     </div>
 
     <div id="desktopSteeringSite">
-        <div class="loadDivs" id="fakten">
-          <h4>Anleitung:</h4>
-          <ul>
-            <li>WASD - vorwärts, links, rückwärts, rechts
-            <li>Pfeil rechts - höhere Geschwindigkeitsstufe</li>
-            <li>Pfeil links - niedrigere Geschwindigkeitsstufe</li>
-            <li>Pfeil oben/unten - Kamera entsprechend schwenken</li>
-          </ul>
-          <h4>Fakten:</h4><ul>
-            <li>maximale Geschwindigkeit: 5km/h</li>
-            <li>Zugkraft: 5 Newton</li>
-            <li>Gewicht: 400g</li>
-            <li>Höhe: 20cm</li>
-            <li>Breite: 20cm</li>
-            <li>Länge: 30cm</li>
-            <li>Empfang: definiert nach Reichweite des benutzten Netzwerks</li>
-          </ul>
-          
-          <div id="settingsConatiner">
-            <button id="settings" onclick="openMenu()"><img id="settingIcon" src="https://squidpod.github.io/images/pics/settings%20forDarkmode.png" alt="" width="50"></button>
-          </div>
-          </div>
-          <div class="loadDivs" id="desktopDivNr2">2</div>
-      
-          <div class="loadDivs" id="bildContainer">
-            <div id="fadenkreuzContainer">
-              <img src="https://squidpod.github.io/images/pics/aim_Dark.png" alt="" width="50" id="crosshair">
-            </div>
-            <img id="img" src="http://192.168.18.168:8080/video" />
-          </div>
-          
-          <button class="desktopSteeringButton loadDivs" id="w" onclick="sendButtonState('honk')">
-            HUPE
+      <div class="loadDivs" id="fakten">
+        <h4>Anleitung:</h4>
+        <ul>
+          <li>WASD - vorwärts, links, rückwärts, rechts</li>
+          <li>P - schießen</li>
+          <li>Pfeil rechts/links - höhere/niedrigere Geschwindigkeitsstufe</li>
+          <li>Pfeil oben/unten - Kamera entsprechend schwenken</li>
+        </ul>
+        <h4>Fakten:</h4>
+        <ul>
+          <li>maximale Geschwindigkeit: 5km/h</li>
+          <li>Zugkraft: 5 Newton</li>
+          <li>Gewicht: 400g</li>
+          <li>Höhe: 20cm</li>
+          <li>Breite: 20cm</li>
+          <li>Länge: 30cm</li>
+          <li>Empfang: definiert nach Reichweite des benutzten Netzwerks</li>
+        </ul>
+
+        <div id="settingsConatiner">
+          <button id="settings" onclick="openMenu()">
+            <img
+              id="settingIcon"
+              src="https://squidpod.github.io/images/pics/settings%20forDarkmode.png"
+              alt=""
+              width="50"
+            />
           </button>
-          <button class="desktopSteeringButton loadDivs" id="a" onclick="sendButtonState('p')">
-            shoot
-          </button>
-          <div class="loadDivs" id="counterDisplay">Speed: <span id="counter">4</span>/7</div>
-          <div class="loadDivs" id="testFürWASD">1</div>
-          <!--Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)--->
-          <div class="loadDivs" id="big" class="loadDivs">
-            <div id="lilBig">
-              <div id="lilbigcontent">
-                <div id="lilBigHeader">
-                  <div id="lilBigHeaderBanner">
-                    <img
-                      id="logoinfo"
-                      src="https://squidpod.github.io/images/pics/final_light.png"
-                    />
-                    <h5 id="linsenpodBanner">LinsenPod</h5>
-                    <h3 id="curiosityBanner"><b>Curiosity</b></h3>
-                  </div>
-                  <button class="desktopSteeringButton" id="lilBigButton" onclick="hideMenu()">
-                    OK
-                  </button>
-                </div>
-                <div class="menuContent">
-                  <label for="options" id="themeLabel">Theme:</label>
-                  <select id="options" name="options">
-                    <option value="true">Dark</option>
-                    <option value="false">Light</option>
-                  </select>
-                </div>
-                <div id="info">
-                  <a
-                    href="https://github.com/linse2268/Linsenpod-Curiosity/"
-                    target="_blank"
-                    ><h3 id="githublink">Unser Github Repository</h3></a
-                  >
-                  <p id="copyright">
-                    von Rémy Göttlich und Linus Bös im Rahmen des
-                    Informatik-Unterrichts bei Herrn Hagedorn 2024/2025
-                  </p>
-                </div>
+        </div>
+      </div>
+
+      <div class="loadDivs" id="bildContainer">
+        <div id="fadenkreuzContainer">
+          <img
+            src="https://squidpod.github.io/images/pics/aim_Dark.png"
+            alt=""
+            width="50"
+            id="crosshair"
+          />
+        </div>
+        <img
+          id="img"
+          src="http://192.168.18.168:8080/video"
+        />
+      </div>
+
+      <button
+        class="desktopSteeringButton loadDivs desktopTwoBigDisplays"
+        id="desktopShootButton"
+        onclick="sendButtonState('p')"
+      >
+        shoot
+      </button>
+      <div class="loadDivs desktopTwoBigDisplays" id="counterDisplay">
+        Speed: <span id="counter">4</span>/7
+      </div>
+
+      <!--Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)--->
+      <div class="loadDivs" id="big" class="loadDivs">
+        <div id="lilBig">
+          <div id="lilbigcontent">
+            <div id="lilBigHeader">
+              <div id="lilBigHeaderBanner">
+                <img
+                  id="logoinfo"
+                  src="https://squidpod.github.io/images/pics/final_light.png"
+                />
+                <h5 id="linsenpodBanner">LinsenPod</h5>
+                <h3 id="curiosityBanner"><b>Curiosity</b></h3>
               </div>
+              <button
+                class="desktopSteeringButton"
+                id="lilBigButton"
+                onclick="hideMenu()"
+              >
+                OK
+              </button>
+            </div>
+            <div class="menuContent">
+              <label for="options" id="themeLabel">Theme:</label>
+              <select id="options" name="options">
+                <option value="true">Dark</option>
+                <option value="false">Light</option>
+              </select>
+            </div>
+            <div id="info">
+              <a
+                href="https://github.com/linse2268/Linsenpod-Curiosity/"
+                target="_blank"
+                ><h3 id="githublink">Unser Github Repository</h3></a
+              >
+              <p id="copyright">
+                von Rémy Göttlich und Linus Bös im Rahmen des
+                Informatik-Unterrichts bei Herrn Hagedorn 2024/2025
+              </p>
             </div>
           </div>
-          <!--Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)--->
-          <div loadDivs class="button loadDivs" id="banner" >
-            <h5 id="linsenpodBanner">LinsenPod</h5>
-            <h3 id="curiosityBanner"><b>Curiosity</b></h3>
-          </div>
+        </div>
+      </div>
+      <!--Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)-Menu(z.B. Dark/Lightmode)--->
+      <div loadDivs class="button loadDivs" id="banner">
+        <h5 id="linsenpodBanner">LinsenPod</h5>
+        <h3 id="curiosityBanner"><b>Curiosity</b></h3>
+      </div>
     </div>
 
     <div id="mobileSteeringSite">
-        <div class="loadDivs" id="mobileBildContainer">
-            <div id="mobileFadenkreuzContainer">
-              <div class="mobileDivInsideImg" id="mobileBeschleunigungsButtonDiv"><div id="mobileBeschleunigungsButtonDivDiv"><button class="mobileAccelerationButton" ontouchstart="mobileBeschleunigungPlusDown()" onmousedown="mobileBeschleunigungPlusDown()" ontouchend="mobileBeschleunigungPlusRelease()" onmouseup="mobileBeschleunigungPlusRelease">+</button><button class="mobileAccelerationButton" ontouchstart="mobileBeschleunigungMinusDown()" onmousedown="mobileBeschleunigungMinusDown()" ontouchend="mobileBeschleunigungMinusRelease()" onmouseup="mobileBeschleunigungMinusRelease()">-</button></div></div>
-              <div class="mobileDivInsideImg" id="mobileFadenkreuzDiv"><img src="https://squidpod.github.io/images/pics/aim_Dark.png" alt="" width="50" id="crosshair"></div>
-              <div class="mobileDivInsideImg" id="mobileSliderSteeringDiv"><input id="mobileSliderSteering" type="range" min="1" max="3"></div>
+      <div class="loadDivs" id="mobileBildContainer">
+        <div id="mobileFadenkreuzContainer">
+          <div class="mobileDivInsideImg" id="mobileBeschleunigungsButtonDiv">
+            <div id="mobileBeschleunigungsButtonDivDiv">
+              <button
+                class="mobileAccelerationButton"
+                ontouchstart="mobileBeschleunigungPlusDown()"
+                onmousedown="mobileBeschleunigungPlusDown()"
+                ontouchend="mobileBeschleunigungPlusRelease()"
+                onmouseup="mobileBeschleunigungPlusRelease()"
+              >
+                +
+              </button>
+              <button
+                class="mobileAccelerationButton"
+                ontouchstart="mobileBeschleunigungMinusDown()"
+                onmousedown="mobileBeschleunigungMinusDown()"
+                ontouchend="mobileBeschleunigungMinusRelease()"
+                onmouseup="mobileBeschleunigungMinusRelease()"
+              >
+                -
+              </button>
             </div>
-            <img id="mobileImg" src="http://192.168.18.168:8080/video" />
           </div>
-
-
-          <div id="mobileOtherContent" class="loadDivs">
-            <button id="mobileDriveButton" class="mobileButtonOrDivs mobileLoadDivs" onclick="driveMode()">Drive</button>
-            <button class="mobileButtonOrDivs mobileLoadDivs" onclick="mobileSpeedUp()">+</button>
-            <button class="mobileButtonOrDivs mobileLoadDivs" onclick="mobileSpeedDown()">-</button>
-            <button id="betaGamma" class="mobileButtonOrDivs mobileLoadDivs">Hello</button>
-            <div id="mobileBannerLogoDiv"  class="mobileButtonOrDivs mobileLoadDivs"><img id="mobileBannerLogo" src="https://squidpod.github.io/images/pics/final_light.png" alt=""></div>
+          <div class="mobileDivInsideImg" id="mobileFadenkreuzDiv">
+            <img
+              src="https://squidpod.github.io/images/pics/aim_Dark.png"
+              alt=""
+              width="50"
+              id="crosshair"
+            />
           </div>
-          
+          <div class="mobileDivInsideImg" id="mobileSliderSteeringDiv">
+            <input
+              oninput="mobileSliderValueSend()"
+              id="mobileSliderSteering"
+              type="range"
+              min="1"
+              max="200"
+            />
+          </div>
+        </div>
+        <img
+          id="mobileImg"
+          src="http://192.168.18.168:8080/video"
+        />
+      </div>
+
+      <div id="mobileOtherContent" class="loadDivs">
+        <button
+          id="mobileDriveButton"
+          class="mobileButtonOrDivs mobileLoadDivs"
+          onclick="driveMode()"
+        >
+          Drive
+        </button>
+        <button
+          class="mobileButtonOrDivs mobileLoadDivs"
+          onclick="mobileSpeedUp()"
+        >
+          +
+        </button>
+        <button
+          class="mobileButtonOrDivs mobileLoadDivs"
+          onclick="mobileSpeedDown()"
+        >
+          -
+        </button>
+        <button id="betaGamma" class="mobileButtonOrDivs mobileLoadDivs">
+          Hello
+        </button>
+        <div id="mobileBannerLogoDiv" class="mobileButtonOrDivs mobileLoadDivs">
+          <img
+            id="mobileBannerLogo"
+            src="https://squidpod.github.io/images/pics/final_light.png"
+            alt=""
+          />
+        </div>
+      </div>
     </div>
     <script>
+      const mobileSliderSteering = document.getElementById(
+        "mobileSliderSteering"
+      );
+      let mobileSliderSteeringValue = 2;
+      let mobileCurrentDirection = 2;
+      let mobileNewDirection = 2;
 
-      function mobileBeschleunigungPlusDown(){
+      mobileBeschleunigungPlusRelease();
+
+      function mobileSliderValueSend() {
+        console.log("change!!!");
+        mobileSliderSteeringValue = mobileSliderSteering.value;
+        if (mobileSliderSteeringValue <= 65) {
+          mobileNewDirection = 1;
+          if (mobileNewDirection != mobileCurrentDirection) {
+            sendButtonState("a");
+            console.log("left");
+            mobileCurrentDirection = 1;
+          }
+        } else if (mobileSliderSteeringValue >= 135) {
+          mobileNewDirection = 3;
+          if (mobileNewDirection != mobileCurrentDirection) {
+            sendButtonState("d");
+            console.log("right");
+            mobileCurrentDirection = 3;
+          }
+        } else {
+          mobileNewDirection = 2;
+          if (mobileNewDirection != mobileCurrentDirection) {
+            console.log("strait");
+            sendButtonState("a_release");
+            sendButtonState("d_release");
+            mobileCurrentDirection = 2;
+          }
+        }
+      }
+
+      function mobileBeschleunigungPlusDown() {
         sendButtonState("w");
         console.log("w");
       }
-      
-      function mobileBeschleunigungPlusRelease(){
+
+      function mobileBeschleunigungPlusRelease() {
         sendButtonState("w_release");
         console.log("w_release");
       }
 
-
-      function mobileBeschleunigungMinusDown(){
+      function mobileBeschleunigungMinusDown() {
         sendButtonState("s");
         console.log("s");
-
       }
 
-      function mobileBeschleunigungMinusRelease(){
+      function mobileBeschleunigungMinusRelease() {
         sendButtonState("s_release");
         console.log("s_release");
-
       }
 
-      function mobileSpeedDown(){
+      function mobileSpeedDown() {
         sendButtonState("ArrowLeft");
         console.log("speed down");
       }
-      function mobileSpeedUp(){
+      function mobileSpeedUp() {
         sendButtonState("ArrowRight");
         console.log("speed up");
       }
 
-    
-
-
-
-
-    
-
-
-//loadingFunctions
+      //loadingFunctions
       const body = document.getElementById("body");
       const bodyContentAskDivice = document.getElementById(
         "bodyContentAskDivice"
@@ -681,10 +798,10 @@ R"=====(
       const desktopSteeringSite = document.getElementById(
         "desktopSteeringSite"
       );
-      const mobileSteeringSite = document.getElementById('mobileSteeringSite');
+      const mobileSteeringSite = document.getElementById("mobileSteeringSite");
 
       const askDiviceDiv = document.getElementById("askDiviceDiv");
-      
+
       const mobileDriveButton = document.getElementById("mobileDriveButton");
       let currentlyDriving = false;
 
@@ -693,26 +810,23 @@ R"=====(
         desktopSteeringSite.style = "display: grid;";
       }
 
-      function loadMobile(){
+      function loadMobile() {
         bodyContentAskDivice.style = "display: none;";
-        mobileSteeringSite.style.display = 'flex';
+        mobileSteeringSite.style.display = "flex";
       }
 
-      
-     //rgba(60, 255, 0, 0.2)
-      function driveMode(){
-        if(!currentlyDriving){
+      //rgba(60, 255, 0, 0.2)
+      function driveMode() {
+        if (!currentlyDriving) {
           mobileDriveButton.innerText = "stopp";
           mobileDriveButton.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
           currentlyDriving = true;
-        }
-        else{
+        } else {
           mobileDriveButton.innerText = "Drive";
           mobileDriveButton.style.backgroundColor = "rgba(60, 255, 0, 0.2)";
           currentlyDriving = false;
         }
       }
-
 
       //old JavaScript
 
@@ -879,14 +993,18 @@ R"=====(
         menu.style = "display: flex; animation: backgroundBlur 100ms linear;";
         menuContent.style = "animation-name: menuOpenAnimation;";
       }
-      const crosshair = document.getElementById('crosshair');
-      const settings = document.getElementById('settingIcon');
+      const crosshair = document.getElementById("crosshair");
+      const settings = document.getElementById("settingIcon");
 
-      const darkModeSettingsIcon = "https://squidpod.github.io/images/pics/settings%20forDarkmode.png";
-      const lightModeSettingsIcon = "https://squidpod.github.io/images/pics/settings%20forLightMode.png";
+      const darkModeSettingsIcon =
+        "https://squidpod.github.io/images/pics/settings%20forDarkmode.png";
+      const lightModeSettingsIcon =
+        "https://squidpod.github.io/images/pics/settings%20forLightMode.png";
 
-      const lightCrosshairSource = "https://squidpod.github.io/images/pics/aim_Light.png";
-      const darkCrosshairSource = "https://squidpod.github.io/images/pics/aim_Dark.png";
+      const lightCrosshairSource =
+        "https://squidpod.github.io/images/pics/aim_Light.png";
+      const darkCrosshairSource =
+        "https://squidpod.github.io/images/pics/aim_Dark.png";
 
       function lightDark(dark) {
         if (dark == "true") {
@@ -918,7 +1036,6 @@ R"=====(
           settings.src = lightModeSettingsIcon;
           crosshair.src = lightCrosshairSource;
 
-
           document.documentElement.style.setProperty(
             "--backgroundcolor",
             "rgb(202, 202, 202)"
@@ -946,13 +1063,12 @@ R"=====(
 </html>
 
 
-
 )=====";
 
 //normal homepage
 const char homepagecode[] =
 R"=====(
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -978,6 +1094,7 @@ R"=====(
       }
       * {
         font-family: "Fredoka", sans-serif;
+        user-select: none;
       }
 
       body {
@@ -1004,6 +1121,7 @@ R"=====(
       }
       p {
         font-size: calc(10px + 1.3vw);
+        text-align: center;
       }
       img {
         width: 7vw;
@@ -1106,7 +1224,7 @@ R"=====(
         <p>
           Curiosity ist ein Auto, das über eine Website gesteuert wird, auf der
           ein Livebild von einer Handykamera zu sehen ist, die sich auf dem Auto
-          befindet. Die Website läuft auf einem ESP 8266 Mikrokontroller, der
+          befindet. Die Website läuft auf einem ESP8266 Mikrokontroller, der
           über WLAN mit einem Browser verbunden werden kann. So kann man das
           Auto überall dort fahren, wo das Auto dasselbe WLAN wie der Browser
           hat. Der Fahrer kann jedoch bequem an einem Platz bleiben.
@@ -1148,7 +1266,7 @@ R"=====(
         if (x == 9) {
           stopInterval();
         }
-      }, 300);
+      }, 200);
 
       function stopInterval() {
         clearInterval(inteval);

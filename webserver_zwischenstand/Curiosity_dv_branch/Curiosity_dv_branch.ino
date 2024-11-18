@@ -10,8 +10,8 @@
 #include "webpageCode.h"
 
 // WiFi credentials
-const char* ssid = "ringleben";
-const char* password = "theahermine";
+const char* ssid = "redminote9";
+const char* password = "PraktikuM";
 
 // Admin credentials for the website security
 const char* admin = "admin";
