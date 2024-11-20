@@ -35,6 +35,8 @@ R"=====(
         user-select: none;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
+        -moz-user-selct: none;
+        -ms-user-select: none;
       }
 
       body {
