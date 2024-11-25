@@ -578,7 +578,7 @@ R"=====(
         </div>
         <img
           id="img"
-          src="http://192.168.18.168:8080/video"
+          src="http://192.168.244.70:8080/video"
         />
       </div>
 
@@ -687,7 +687,7 @@ R"=====(
         </div>
         <img
           id="mobileImg"
-          src="http://192.168.18.168:8080/video"
+          src="http://192.168.244.70:8080/video"
         />
       </div>
 
