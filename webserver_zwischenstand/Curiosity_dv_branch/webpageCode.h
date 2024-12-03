@@ -83,7 +83,6 @@ R"=====(
         width: 98dvw;
         height: 96dvh;
         padding: 1dvw;
-
         display: none;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -546,11 +545,10 @@ R"=====(
         </ul>
         <h4>Fakten:</h4>
         <ul>
-          <li>maximale Geschwindigkeit: 5km/h</li>
-          <li>Zugkraft: 5 Newton</li>
-          <li>Gewicht: 400g</li>
-          <li>Höhe: 20cm</li>
-          <li>Breite: 20cm</li>
+          <li>maximale Geschwindigkeit: 5m/s</li>
+          <li>Gewicht: 2kg</li>
+          <li>Höhe: 25cm</li>
+          <li>Breite: 15cm</li>
           <li>Länge: 30cm</li>
           <li>Empfang: definiert nach Reichweite des benutzten Netzwerks</li>
         </ul>
@@ -828,7 +826,6 @@ R"=====(
         }
       }
 
-      //old JavaScript
 
       function sendButtonState(state) {
         const xhr = new XMLHttpRequest();
@@ -958,7 +955,7 @@ R"=====(
         }
       });
 
-      // Function to update the counter (same as your original code)
+      // Function to update the counter 
       function updateCounter() {
         const xhr = new XMLHttpRequest();
         xhr.open("GET", "/var", true); // Anfrage an den /var Endpunkt
